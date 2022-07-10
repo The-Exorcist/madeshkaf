@@ -1,0 +1,39 @@
+[data-showmore] {
+}
+[data-showmore-content] {
+}
+[data-showmore-button] {
+	position: relative;
+	font-family: "Gilroy";
+	font-size: rem(19);
+	line-height: math.div(28, 19);
+	color: #937a60;
+
+	padding: 40px 0px 0px 0px;
+	@media (max-width: $mobileSmall) {
+		display: block;
+		margin: 0px auto;
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		width: rem(178);
+		height: rem(2);
+		bottom: 0;
+		left: 50%;
+		background-color: #937a60;
+		transform: translate(-50%, 0px);
+	}
+	span {
+		&:last-child {
+			display: none;
+		}
+		._showmore-active & {
+			display: none;
+			&:last-child {
+				display: block;
+			}
+		}
+	}
+}
